@@ -928,5 +928,17 @@
   },
   "leaf": {
     "start": "\ue131"
+  },
+  "user-lock": {
+    "start": "\ue137"
+  },
+  "dashboard": {
+    "start": "\ue139"
+  },
+  "pause-shape-filled": {
+    "start": "\ue13b"
+  },
+  "play-shape-filled": {
+    "start": "\ue13d"
   }
 }
