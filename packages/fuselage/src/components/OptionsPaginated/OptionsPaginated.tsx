@@ -81,15 +81,21 @@ export const OptionsPaginated = forwardRef(
       );
     };
 
+    // check if data length is more then 4 then show Virtuoso else show normal list of options
+    const limit = 4;
     return (
       <Box rcx-options {...props} ref={ref}>
         <Tile padding={0} paddingBlock={'x12'} paddingInline={0} elevation='2'>
-          {!options.length ? (
+          {options.length <= 0 ? (
             <EmptyComponent />
+          ) : options.length > 0 && options.length <= limit ? (
+            options.map((data, index) => (
+              <OptionsComponentWithData index={index} data={data} />
+            ))
           ) : (
             <Virtuoso
               endReached={endReached}
-              style={{ height: '144px' }}
+              style={{  height: '144px' }}
               totalCount={options.length}
               data={options}
               // TODO Add a scroller element
